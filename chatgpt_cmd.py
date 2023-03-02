@@ -28,7 +28,7 @@ def main():
             break
         history.append({"role": "user", "content": user_input})
         rsp_content = get_response(history)
-        print(f'> ChatGPT: {rsp_content}\n')
+        print(f'> ChatGPT: >>>>> \n {rsp_content}\n')
         history.append({"role": "assistant", "content": rsp_content})
 
 if __name__ == "__main__":
