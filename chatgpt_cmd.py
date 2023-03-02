@@ -2,8 +2,8 @@ import openai
 import csv
 import os
 
-openai.api_key = os.environ.get('OPENAI_API_KEY')
-
+openai.api_key = ""  # put your openai API key here, apply for a key in https://platform.openai.com/account/api-keys
+user_name = ""  # put your name here
 def get_response(chat):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
@@ -16,7 +16,7 @@ def main():
     history = [{"role": "system", "content": f"You are a helpful assistant."}]
 
     while True:
-        user_input = input("> Shinan: ").strip()
+        user_input = input("> {} : ".format(user_name)).strip()
         print()
         if user_input == "q":
             history.append({"role": "user", "content": "summarize the entire conversation in under 4 words"})
